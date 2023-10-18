@@ -4,11 +4,13 @@ public class OrderItem {
 	private int quantity;
 	private double price;
 	private Product product;
+	private Client client;
 	
-	public OrderItem(int quantity, double price, Product product) {
+	public OrderItem(int quantity, double price, Product product, Client client) {
 		this.quantity = quantity;
 		this.price = price;
 		this.product = product;
+		this.client = client;
 	}
 	
 	public double subTotal() {
@@ -37,5 +39,15 @@ public class OrderItem {
 
 	public void setProduct(Product product) {
 		this.product = product;
+	}
+	
+	@Override
+	public String toString() {
+		return this.getProduct().getName() + 
+				" R$" + String.format("%.2f", this.getProduct().getPrice()) +
+				" , Quantidade: " + this.getQuantity() +
+				", Subtotal: R$" + String.format("%.2f", this.subTotal());
+		
+		
 	}
 }

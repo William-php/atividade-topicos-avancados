@@ -33,7 +33,10 @@ public class Order {
 	public void printOrder() {
 		System.out.println("Status: " + this.status +
 				"\nClient name: " + this.client.getName() +
-				"\nClient email: " + this.client.getEmail());
+				"\nClient email: " + this.client.getEmail() +
+				"\nProducts:" + this.orderItem.toString() +
+				"\nTotal: " + String.format("%.2f", this.total()));
+		
 		
 		
 	}
